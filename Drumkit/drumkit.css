@@ -1,0 +1,46 @@
+.keys {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    gap: 2rem;
+    background-image: linear-gradient(
+        to bottom right,
+        #00008B 0%,
+        #2A0134 75%
+    );
+}
+
+.key {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 6.5rem;
+    min-height: 8rem;
+    background-color: bisque;
+    border-radius: 1rem;
+    transition: transform ease-in-out .08s;
+}
+
+.key kbd {
+    font-family: 'Times New Roman', Times, serif;
+    color:darkslategray;
+    font-size: 4rem;
+}
+
+.key span {
+    font-family: Helvetica, sans-serif;
+    color: brown;
+    font-size: 1rem;
+    font-weight: 800;
+    font-kerning: 5;
+    text-transform: uppercase;
+}
+
+.playing {
+    border: 5px solid yellowgreen;
+    transform: scale(1.3);
+}
