@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./clockface.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="clockface">
+                <div id="hour" class="clock_arm"></div>
+                <div id="minute" class="clock_arm" ></div>
+                <div id="second" class="clock_arm"></div>
+            </div>
+        </div>
+        <script>
+
+            const time = new Date()
+            let second = time.getSeconds();
+            let minute = time.getMinutes();
+            let hour = time.getHours();
+
+            const tick = 360 / 60;
+            const hour_tick = 360 / 12;
+            const secondArm = document.getElementById("second");
+            const minuteArm = document.getElementById("minute");
+            const hourArm = document.getElementById("hour");
+
+            function clock() {
+                second += 1;
+
+                if (second % 60 === 0){
+                    minute += 1;
+
+                    if (minute % 60 === 0) {
+                        hour += 1
+                    }
+                }
+
+                secondArm.style.transform = `rotate(${90 + (tick * second)}deg)`;
+                minuteArm.style.transform = `rotate(${90 + (tick * minute)}deg)`;
+                hourArm.style.transform = `rotate(${90 + (hour_tick * hour)}deg)`;
+            }
+
+            setInterval(clock, 1000);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+:root {
+    --clock-diameter: 25rem;
+    --arm-height: 1rem;
+}
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        to bottom right,
+        blue,
+        purple
+    );
+    width: 100vw;
+    height: 100vh;
+}
+
+.clockface {
+    position: relative;
+    width: var(--clock-diameter);
+    height: var(--clock-diameter);
+    border-radius: 50%;
+    border: 2rem solid darkgreen;
+    background-color: antiquewhite;
+}
+
+.clock_arm {
+    position: absolute;
+    top: calc((var(--clock-diameter) - var(--arm-height)) / 2);
+    width: 50%;
+    height: var(--arm-height);
+    background-color: black;
+    transform-origin: 100%;
+    transition: all ease-in-out .4s;
+    transform: rotate(90deg);
+}
+
+#second {
+    background-color: red;
+}
+
+#minute {
+    background-color: green;
+}
+
+#hour {
+    background-color: blue;
+}
