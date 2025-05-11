@@ -1,0 +1,54 @@
+:root {
+    --spacing: 5px;
+    --color: #ED2EA5;
+    --blur: 0px;
+}
+
+body{
+    color: antiquewhite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #193549;
+    height: 100dvh;
+}
+
+.title {
+    text-align: center;
+}
+
+.title-emphasis{
+    color: var(--color);
+    font-size: 3rem;
+}
+
+.controls {
+    margin: 30px 0;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-size: 2rem;
+}
+
+input {
+    margin: 0 60px 0 20px;
+}
+
+.image {
+    position: relative;
+    align-self: center;
+    padding: var(--spacing);
+    background: var(--color);
+    filter: blur(var(--blur));
+}

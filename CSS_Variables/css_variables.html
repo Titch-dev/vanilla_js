@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css_variables.css">
+    </head>
+    <body>
+        <div class="wrapper">
+
+            <h1 class="title">Updating CSS Variables with <span class="title-emphasis">JS</span></h1>
+            <div class="controls">
+                <label for="spacing">Spacing:</label>
+                <input type="range" min="5" max="50" name="spacing" value="5" data-type="px">
+
+                <label for="blur">Blur:</label>
+                <input type="range" name="blur" min="0" max="30" value="0" data-type="px">
+
+                <label for="color">Colour:</label>
+                <input type="color" name="color" value="#ED2EA5">
+
+            </div>
+            <img src="https://picsum.photos/800/500" class="image">
+        </div>
+
+        
+        <script>
+
+            const inputs = document.querySelectorAll('input');
+            const root = document.documentElement;
+
+            inputs.forEach((input) => {
+                input.addEventListener('input', handleChange);
+            })
+        
+            
+
+            function handleChange(event) {
+                const value = event.target.value;
+                const name = event.target.name;
+                const type = event.target.dataset.type || '';
+                
+                root.style.setProperty(`--${name}`, `${value}${type}`)
+                
+            }
+
+        </script>
+    </body>
+</html>
